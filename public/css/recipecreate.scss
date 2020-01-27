@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+}
+$font-family-sans-serif: 'Nunito', sans-serif;
+$green:#4A9B70;
+$textwhite:white;
+
+body{
+    background: $green !important;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.green{
+    color: $green;
+}
+.flexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gridcenter{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper{
+    width: calc(100vw - 2rem);
+    max-width: 1300px;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-rows: 50vh 1fr;
+    grid-row-gap: 5vh;
+    #card{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        min-height: 50vh;
+        background-color: white;
+        border-radius: 1px;
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        #img,#body{
+            height: 90%;
+            width: 90%;
+        }
+        #img{
+            background-color: rgba(128, 128, 128, 0.1);
+            border: $green 2px solid;
+            border-radius: 2px;
+            justify-self: center;
+            align-self: center;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        #body{
+            width: 80%;
+            justify-self: center;
+            align-self: center;
+            display: grid;
+            justify-content: end;
+            align-items: flex-start;
+            grid-template-rows: 1fr 1fr 60% ;
+            grid-template-columns: 1fr;
+            .forminput{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                label{
+                    font-size: calc(0.6vw + 0.6rem);
+                    color: $green;
+                    width: 100%;
+                    text-align: start;
+                }
+                input,textarea{
+                    border: none;
+                    border-bottom: $green 1px solid;
+                    outline: none;
+                    background-color: rgba(128, 128, 128, 0.1);
+                    border-radius: 2px;
+                    color: $green;
+                }
+            }
+            #description{
+                font-size: calc(1.5vw + 0.8rem);
+                height: 100%;
+               
+            }
+            #title,#ingredients{
+                height: 50%;
+                font-size: calc(0.5vw + 1rem);
+
+            }
+            #title,#ingredients,#description{
+               
+                width: 100%;
+           
+            }
+        }
+    }
+    #steps{
+        width:100%;
+        max-width: 1100px;
+        margin: 5vh auto;
+        h1{
+            color: white;
+            text-align: center;
+            
+        }
+        .steps{
+            width:100%;
+            height: 100%;
+           
+            grid-template-columns: 60% 1fr;
+            background-color: white;
+            min-height: 20vh;
+            input,textarea{
+                border: none;
+                border-bottom: $green 1px solid;
+                outline: none;
+                background-color: rgba(128, 128, 128, 0.1);
+                border-radius: 2px;
+                color: $green;
+            }
+            .form,.img{
+                width:90%;
+                height: 90%;
+                justify-self: center;
+                align-self: center;
+            }
+            .form{
+               
+                display: grid;
+                grid-template-rows: 30% 1fr;
+                grid-row-gap: 25px;
+                .name{
+                    display: grid;
+                    grid-template-columns: 30% 1fr;
+                    
+                }
+                .desc{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+            }
+            .img{
+           
+                background-color: rgba(128, 128, 128, 0.1);
+                border: $green 2px solid;
+                border-radius: 2px;
+                justify-self: center;
+                align-self: center;
+                background-position: center;
+                background-size: 100%;
+                background-repeat: no-repeat;
+               
+            }
+        }
+        .btn{
+            color: $green;
+            background-color: white;
+            border-radius: 100px;
+            width: 50px;
+            height: 50px;
+            font-size: 2rem;
+            margin-left: auto;
+            margin-top: 5%;
+        }
+    }
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+@media(max-width:600px){
+    .steps{
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 50%;
+        min-height: 30vh !important;
+
+    }
+}

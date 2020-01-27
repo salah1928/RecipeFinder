@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: #4A9B70;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.green {
+  color: #4A9B70;
+}
+
+.flexcenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#wrapper {
+  width: calc(100vw - 2rem);
+  max-width: 1200px;
+  margin: 5% auto;
+}
+
+#wrapper #card {
+  width: 100%;
+  overflow: hidden;
+  min-height: 50vh;
+  background-color: white;
+  border-radius: 1px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 1fr;
+      grid-template-columns: 30% 1fr;
+}
+
+#wrapper #card #body {
+  height: 95%;
+  width: 95%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 70% 1fr;
+      grid-template-rows: 1fr 70% 1fr;
+}
+
+#wrapper #card #body #chef, #wrapper #card #body #date {
+  font-size: calc(0.5vw + 0.5rem);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+#wrapper #card #body #title {
+  font-size: calc(2vw + 1.5rem);
+}
+
+#wrapper #card #body #description {
+  font-size: calc(1.5vw + 0.8rem);
+}
+
+#wrapper #card #body #ingredients {
+  font-size: calc(0.5vw + 1rem);
+}
+
+#wrapper #card #body #info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#wrapper #steps {
+  width: calc(100vw - 4rem);
+  max-width: 1100px;
+  margin: 5% auto;
+  background-color: white;
+  border-radius: 1px;
+  padding: 5% 0;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 25px;
+}
+
+#wrapper #steps .step {
+  height: 90%;
+  width: 90%;
+  min-height: 25vh;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 1fr;
+      grid-template-columns: 60% 1fr;
+}
+
+#wrapper #steps .step .body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40% 1fr;
+      grid-template-rows: 40% 1fr;
+  width: 95%;
+}
+
+#wrapper #steps .step .body .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#wrapper #steps .step .body .header h3 {
+  font-size: calc(0.8vw + 0.8rem);
+}
+
+#wrapper #steps .step .body .header p {
+  font-size: calc(0.5vw + 0.5rem);
+}
+
+#wrapper #steps .step .body p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: calc(0.6vw + 0.8rem);
+}
+
+#wrapper #comments {
+  width: calc(100vw - 4rem);
+  max-width: 1100px;
+  margin: 5% auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (100px)[auto-fit];
+      grid-template-rows: repeat(auto-fit, 100px);
+  grid-row-gap: 25px;
+}
+
+#wrapper #comments #inputPart {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 1fr;
+      grid-template-columns: 80% 1fr;
+  grid-column-gap: 25px;
+  height: 100%;
+}
+
+#wrapper #comments #inputPart #input {
+  background-color: white;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 2%;
+}
+
+#wrapper #comments #inputPart #input input {
+  border: none;
+  font-size: calc(1vw + 1rem);
+  outline: none;
+  width: 100%;
+  height: 90%;
+}
+
+#wrapper #comments #inputPart a {
+  background-color: white;
+  text-decoration: none;
+  font-size: calc(0.8vw + 0.8rem);
+  border-radius: 3px;
+}
+
+#wrapper #comments .comment {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  padding: 1% 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40% 1fr;
+      grid-template-rows: 40% 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#wrapper #comments .comment h4 {
+  font-size: calc(1vw + 0.8rem);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (max-width: 600px) {
+  #comments #inputPart {
+    -ms-grid-columns: unset !important;
+        grid-template-columns: unset !important;
+    -ms-grid-rows: 50% 1fr;
+        grid-template-rows: 50% 1fr;
+    grid-row-gap: 20px;
+  }
+  #comments #inputPart a {
+    width: 50%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+/*# sourceMappingURL=recipeshow.css.map */

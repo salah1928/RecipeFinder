@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: #4A9B70 !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.green {
+  color: #4A9B70;
+}
+
+.flexcenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gridcenter {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#wrapper {
+  width: calc(100vw - 2rem);
+  max-width: 1300px;
+  margin: 5vh auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50vh 1fr;
+      grid-template-rows: 50vh 1fr;
+  grid-row-gap: 5vh;
+}
+
+#wrapper #card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 50vh;
+  background-color: white;
+  border-radius: 1px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 1fr;
+      grid-template-columns: 30% 1fr;
+}
+
+#wrapper #card #img, #wrapper #card #body {
+  height: 90%;
+  width: 90%;
+}
+
+#wrapper #card #img {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: #4A9B70 2px solid;
+  border-radius: 2px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#wrapper #card #body {
+  width: 80%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-grid-rows: 1fr 1fr 60%;
+      grid-template-rows: 1fr 1fr 60%;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+#wrapper #card #body .forminput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#wrapper #card #body .forminput label {
+  font-size: calc(0.6vw + 0.6rem);
+  color: #4A9B70;
+  width: 100%;
+  text-align: start;
+}
+
+#wrapper #card #body .forminput input, #wrapper #card #body .forminput textarea {
+  border: none;
+  border-bottom: #4A9B70 1px solid;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 2px;
+  color: #4A9B70;
+}
+
+#wrapper #card #body #description {
+  font-size: calc(1.5vw + 0.8rem);
+  height: 100%;
+}
+
+#wrapper #card #body #title, #wrapper #card #body #ingredients {
+  height: 50%;
+  font-size: calc(0.5vw + 1rem);
+}
+
+#wrapper #card #body #title, #wrapper #card #body #ingredients, #wrapper #card #body #description {
+  width: 100%;
+}
+
+#wrapper #steps {
+  width: 100%;
+  max-width: 1100px;
+  margin: 5vh auto;
+}
+
+#wrapper #steps h1 {
+  color: white;
+  text-align: center;
+}
+
+#wrapper #steps .steps {
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 60% 1fr;
+      grid-template-columns: 60% 1fr;
+  background-color: white;
+  min-height: 20vh;
+}
+
+#wrapper #steps .steps input, #wrapper #steps .steps textarea {
+  border: none;
+  border-bottom: #4A9B70 1px solid;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 2px;
+  color: #4A9B70;
+}
+
+#wrapper #steps .steps .form, #wrapper #steps .steps .img {
+  width: 90%;
+  height: 90%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#wrapper #steps .steps .form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 30% 1fr;
+      grid-template-rows: 30% 1fr;
+  grid-row-gap: 25px;
+}
+
+#wrapper #steps .steps .form .name {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 1fr;
+      grid-template-columns: 30% 1fr;
+}
+
+#wrapper #steps .steps .form .desc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+#wrapper #steps .steps .img {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: #4A9B70 2px solid;
+  border-radius: 2px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#wrapper #steps .btn {
+  color: #4A9B70;
+  background-color: white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .steps {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    -ms-grid-rows: 50%;
+        grid-template-rows: 50%;
+    min-height: 30vh !important;
+  }
+}
+/*# sourceMappingURL=recipecreate.css.map */
