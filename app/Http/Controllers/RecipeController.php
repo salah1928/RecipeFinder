@@ -43,7 +43,7 @@ class RecipeController extends Controller
     {
      
         $data['recipes'] = Recipe::orderBy('created_at','desc');
-        return view('recipe.list',$data);
+        return view('recipe.List',$data);
     }
     public function all(){
         $data['recipes'] = Recipe::orderBy('created_at','desc')->paginate(12);
