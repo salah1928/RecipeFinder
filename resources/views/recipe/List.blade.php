@@ -14,7 +14,7 @@
    <br>
     <div class="">
        <div class="recipes">
- 
+ jjjjjjjjjj
                @foreach($recipes as $recipe)
                   <div class="recipe">
                      
