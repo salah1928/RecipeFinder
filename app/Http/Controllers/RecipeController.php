@@ -56,7 +56,7 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        return view('recipe.create');
+        return view('recipe.Create');
     }
 
     /**
@@ -174,7 +174,7 @@ class RecipeController extends Controller
     // $data['steps'] = $recipe->steps;
     // $data['user']=$recipe->user;
    
-        return view('recipe.show', $data);
+        return view('recipe.Show', $data);
     }
 
     /**
@@ -193,7 +193,7 @@ class RecipeController extends Controller
         $data['recipe_info']->ingredients =str_replace(['","','"]','["'],' ', $data['recipe_info']->ingredients);
     
         $data['steps'] = Step::where('recipe_id',$data['recipe_info']->id)->get();
-        return view('recipe.edit', $data);
+        return view('recipe.Edit', $data);
        }else{
         return Redirect::to('recipes');
        }
