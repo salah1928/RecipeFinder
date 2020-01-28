@@ -9,9 +9,9 @@ html{
 }
 #bod{
     img{
-        height: 200px;
-        width: 200px;
-    }
+    height: 200px;
+    width: 200px;
+}
 }
 body{
     overflow-x: hidden;
@@ -148,7 +148,7 @@ body{
     min-height: 90vh;
     padding: 0 5rem;
     display: grid;
-    align-items: center;
+   
     justify-content: center;
     grid-template-columns: repeat(auto-fill,400px);
     grid-column-gap: 1rem;

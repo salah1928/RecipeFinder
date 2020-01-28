@@ -25,7 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
+    public function authcheck(){
+        $auth = [0,1];
+        return $auth[Auth::check()];
+    }
     public function allusers(){
         return User::get();
     }

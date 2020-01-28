@@ -2560,13 +2560,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user', 'recipe', 'comments', 'allow', 'steps'],
   data: function data() {
     return {
       'image': "/recipe_images/".concat(this.recipe.image),
       'cmnt': '',
-      'cmnts': this.comments
+      'cmnts': this.comments,
+      'auth': ''
     };
   },
   methods: {
@@ -2589,9 +2593,23 @@ __webpack_require__.r(__webpack_exports__);
       window.location.href = "/recipes";
     }
   },
+  created: function created() {
+    var _this2 = this;
+
+    axios.get('/authcheck').then(function (r) {
+      _this2.auth = r.data;
+    });
+  },
   computed: {
     reverseComments: function reverseComments() {
       return this.cmnts.slice().reverse();
+    },
+    authcheck: function authcheck() {
+      var _this3 = this;
+
+      axios.get('/authcheck').then(function (r) {
+        _this3.auth = r.data;
+      });
     }
   }
 });
@@ -44427,37 +44445,48 @@ var render = function() {
         "div",
         { attrs: { id: "comments" } },
         [
-          _c("div", { attrs: { id: "inputPart" } }, [
-            _c("div", { staticClass: "flexcenter", attrs: { id: "input" } }, [
-              _c("input", {
-                directives: [
+          _vm.auth === 1
+            ? _c("div", { attrs: { id: "inputPart" } }, [
+                _c(
+                  "div",
+                  { staticClass: "flexcenter", attrs: { id: "input" } },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cmnt,
+                          expression: "cmnt"
+                        }
+                      ],
+                      staticClass: "green",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.cmnt },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.cmnt = $event.target.value
+                        }
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
                   {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.cmnt,
-                    expression: "cmnt"
-                  }
-                ],
-                staticClass: "green",
-                attrs: { type: "text" },
-                domProps: { value: _vm.cmnt },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.cmnt = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "green flexcenter", on: { click: _vm.comment } },
-              [_vm._v("Comment")]
-            )
-          ]),
+                    staticClass: "green flexcenter",
+                    on: { click: _vm.comment }
+                  },
+                  [_vm._v("Comment")]
+                )
+              ])
+            : _vm.auth === 0
+            ? _c("div", [_vm._m(1)])
+            : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.reverseComments, function(comment) {
             return _c("div", { key: comment.id, staticClass: "comment" }, [
@@ -44484,6 +44513,20 @@ var staticRenderFns = [
     return _c("div", { attrs: { id: "navback" } }, [
       _c("a", { attrs: { href: "/recipes" } }, [_vm._v("Back To All Recipes")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h4",
+      { staticStyle: { color: "white", "text-align": "center" } },
+      [
+        _vm._v("Please "),
+        _c("a", { attrs: { href: "/login" } }, [_vm._v("Login")]),
+        _vm._v(" To Make A Comment.")
+      ]
+    )
   }
 ]
 render._withStripped = true

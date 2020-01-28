@@ -36,11 +36,14 @@
             </div>
         </div><!--steps-->
         <div id="comments">
-            <div id="inputPart">
+            <div v-if="auth === 1" id="inputPart">
                 <div class="flexcenter" id="input">
                     <input class="green" v-model="cmnt" type="text">
                 </div>
                 <a class="green flexcenter" @click="comment">Comment</a>
+            </div>
+            <div v-else-if="auth === 0">
+                <h4 style="color:white;text-align:center;">Please <a href="/login">Login</a> To Make A Comment.</h4>
             </div>
             <div class="comment" v-for="comment in reverseComments" :key="comment.id">
                 <h4 class="green">{{comment.user}} |  {{comment.created_at}}</h4>
@@ -58,7 +61,8 @@ export default {
         return{
             'image':`/recipe_images/${this.recipe.image}`,
             'cmnt':'',
-            'cmnts':this.comments
+            'cmnts':this.comments,
+            'auth':''
         }
     },
     methods:{
@@ -79,10 +83,20 @@ export default {
             window.location.href = "/recipes";
         }
     },
+    created(){
+        axios.get('/authcheck').then(r=>{
+            this.auth = r.data
+            })
+    },
     computed: {
     reverseComments() {
         return this.cmnts.slice().reverse();
-  }     
+    },
+    authcheck(){
+        axios.get('/authcheck').then(r=>{
+            this.auth = r.data
+            })
+    }    
 }
 }
 </script>

@@ -26,6 +26,7 @@ Route::patch('/recipes/update/{id}', 'RecipeController@update')->name('update')-
 Route::get('/recipes/search/{search?}', 'RecipeController@search');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/authcheck', 'HomeController@authcheck');
 
 Route::get('/user/show/{id}', 'HomeController@showuser')->name('usershow');
 Route::patch('/home/user/update/{id}', 'HomeController@updateuser')->name('updateuser')->middleware('auth');
