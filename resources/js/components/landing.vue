@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div id="bod">
         <div id="mainpage">
         <div id="wrapper">
             <div id="container">

@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -14,17 +14,9 @@
    <link href="{{ asset('css/landing.css') }}" rel="stylesheet">
    <script src="https://kit.fontawesome.com/67bf1e6382.js" crossorigin="anonymous"></script>
     </head>
-    <body> --}}
-        @push('styles')
-        <link href='{{asset('css/landing.css')}}' rel='stylesheet'>
-        @endpush
-        @extends('layouts.app')
-        @section('content')
-            
-        
+    <body>
         <div id="app">
         <lan-ding :recipes="{{$recipes}}"></lan-ding>
-
         {{-- <router-view></router-view> --}}
 
             {{-- <div id="welcomePage" class="flex-center position-ref full-height">
@@ -66,6 +58,5 @@
                 </div><!--landing-->
             </div> --}}
         </div>
-    {{-- </body>
-</html> --}}
-@endsection
+    </body>
+</html>

@@ -6,15 +6,15 @@ html {
   scroll-behavior: smooth;
 }
 
+#bod img {
+  height: 200px;
+  width: 200px;
+}
+
 body {
   overflow-x: hidden;
   font-family: "Nunito", sans-serif;
   background: rgba(128, 128, 128, 0.1);
-}
-
-img {
-  height: 200px;
-  width: 200px;
 }
 
 #mainpage {
