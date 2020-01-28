@@ -139,7 +139,7 @@ export default {
     senddata(){
 
       
-      axios.post('/recipes/store/',{
+      axios.post('/recipes/store',{
         'title':this.title,
         'image':this.image,
         'description':this.description,

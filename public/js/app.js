@@ -1974,7 +1974,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     senddata: function senddata() {
-      axios.post('/recipes/store/', {
+      axios.post('/recipes/store', {
         'title': this.title,
         'image': this.image,
         'description': this.description,
