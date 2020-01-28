@@ -108,7 +108,7 @@ class RegisterController extends Controller
             'gender'=>$data['gender'],
            
         ]);
-            \Mail::to($user)->send(new Welcome($user));
+            // \Mail::to($user)->send(new Welcome($user));
         return $user ;
 
         
