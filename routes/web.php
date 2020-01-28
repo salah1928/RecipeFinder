@@ -21,7 +21,7 @@ Route::get('/recipes/create', 'RecipeController@create')->name('create')->middle
 Route::get('/recipes/show/{id}', 'RecipeController@show')->name('show');
 Route::get('/recipes/edit/{id}', 'RecipeController@edit')->name('edit')->middleware('auth'); 
 Route::get('/recipes/destroy/{id}', 'RecipeController@destroy')->name('destroy')->middleware('auth'); 
-Route::get('/recipes/store/', 'RecipeController@store')->name('store')->middleware('auth'); 
+Route::post('/recipes/store/', 'RecipeController@store')->name('store')->middleware('auth'); 
 Route::patch('/recipes/update/{id}', 'RecipeController@update')->name('update')->middleware('auth'); 
 Route::get('/recipes/search/{search?}', 'RecipeController@search');
 
